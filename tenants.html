@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropertyPro - Tenants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        indigo: {
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar Navigation -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-indigo-700 text-white">
+                <div class="flex items-center h-16 px-4 border-b border-indigo-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-building mr-2 text-xl"></i>
+                        <span class="text-xl font-bold">PropertyPro</span>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-grow px-4 py-4 overflow-y-auto">
+                    <nav class="flex-1 space-y-2">
+                        <a href="dashboard.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="properties.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-home mr-3"></i>
+                            Properties
+                        </a>
+                        <a href="tenants.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-indigo-800">
+                            <i class="fas fa-users mr-3"></i>
+                            Tenants
+                        </a>
+                        <a href="rent-payments.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-dollar-sign mr-3"></i>
+                            Rent Payments
+                        </a>
+                        <a href="maintenance.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-tools mr-3"></i>
+                            Maintenance
+                        </a>
+                        <a href="reports.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-envelope mr-3"></i>
+                            Messages
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-file-alt mr-3"></i>
+                            Documents
+                        </a>
+                    </nav>
+                    <div class="mt-auto pb-4">
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-cog mr-3"></i>
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Header -->
+            <header class="flex items-center justify-between h-16 px-6 bg-white border-b border-gray-200">
+                <div class="flex items-center">
+                    <button class="md:hidden text-gray-500 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="ml-4 text-xl font-semibold text-gray-800">Tenant Management</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-gray-500 rounded-full hover:bg-gray-100">
+                        <i class="fas fa-bell"></i>
+                        <span class="sr-only">Notifications</span>
+                    </button>
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 focus:outline-none">
+                            <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white">
+                                JD
+                            </div>
+                            <span class="hidden md:inline-block font-medium">John Doe</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="flex-1 overflow-y-auto p-6 bg-gray-100">
+                <!-- Page Header and Actions -->
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">Tenant Directory</h2>
+                        <p class="text-gray-600">Manage all current and prospective tenants</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 flex space-x-3">
+                        <button class="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <i class="fas fa-download mr-2"></i> Export
+                        </button>
+                        <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <i class="fas fa-plus mr-2"></i> Add Tenant
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tenant Filters and Search -->
+                <div class="bg-white rounded-lg shadow p-4 mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                            <select class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm">
+                                <option>All Tenants</option>
+                                <option>Current</option>
+                                <option>Prospective</option>
+                                <option>Past</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Property</label>
+                            <select class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm">
+                                <option>All Properties</option>
+                                <option>Downtown Apartment</option>
+                                <option>Suburban House</option>
+                                <option>City Condo</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Search Tenants</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-search text-gray-400"></i>
+                                </div>
+                                <input type="text" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Search by name, email, or phone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tenants Table -->
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800">24 Tenants Found</h3>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-sm text-gray-500">
+                                Rows per page:
+                                <select class="ml-1 border-0 bg-transparent focus:ring-0 focus:outline-none">
+                                    <option>10</option>
+                                    <option>25</option>
+                                    <option>50</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Tenant
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Property
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Lease Dates
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Rent
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Status
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Actions
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <!-- Tenant Row 1 -->
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <div class="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-medium">
+                                                    MS
+                                                </div>
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Michael Smith</div>
+                                                <div class="text-sm text-gray-500">michael.smith@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">Downtown Apartment</div>
+                                        <div class="text-sm text-gray-500">Unit 4B</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">Jan 15, 2023 - Jan 14, 2024</div>
+                                        <div class="text-sm text-gray-500">12 months</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">$2,400/mo</div>
+                                        <div class="text-sm text-gray-500">Paid on 1st</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                            Current
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <button class="text-indigo-600 hover:text-indigo-900 mr-3">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="text-gray-600 hover:text-gray-900 mr-3">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Tenant Row 2 -->
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <div class="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-medium">
+                                                    EJ
+                                                </div>
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Emily Johnson</div>
+                                                <div class="text-sm text-gray-500">emily.j@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">Suburban House</div>
+                                        <div class="text-sm text-gray-500">-</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">Mar 1, 2023 - Feb 28, 2024</div>
+                                        <div class="text-sm text-gray-500">12 months</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">$1,800/mo</div>
+                                        <div class="text-sm text-gray-500">Paid on 3rd</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                            Current
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <button class="text-indigo-600 hover:text-indigo-900 mr-3">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="text-gray-600 hover:text-gray-900 mr-3">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Tenant Row 3 -->
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-medium">
+                                                    DW
+                                                </div>
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">David Wilson</div>
+                                                <div class="text-sm text-gray-500">david.w@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">City Condo</div>
+                                        <div class="text-sm text-gray-500">Unit 12F</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">Apr 10, 2023 - Apr 9, 2024</div>
+                                        <div class="text-sm text-gray-500">12 months</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">$3,200/mo</div>
+                                        <div class="text-sm text-gray-500">Paid on 5th</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                            Current
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <button class="text-indigo-600 hover:text-indigo-900 mr-3">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="text-gray-600 hover:text-gray-900 mr-3">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Tenant Row 4 -->
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <div class="h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 font-medium">
+                                                    SB
+                                                </div>
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Sarah Brown</div>
+                                                <div class="text-sm text-gray-500">sarah.b@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">Lakeside Villa</div>
+                                        <div class="text-sm text-gray-500">-</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-500">No active lease</div>
+                                        <div class="text-sm text-gray-500">Prospective tenant</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">$4,500/mo</div>
+                                        <div class="text-sm text-gray-500">-</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                            Prospective
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <button class="text-indigo-600 hover:text-indigo-900 mr-3">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="text-gray-600 hover:text-gray-900 mr-3">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+                        <div class="text-sm text-gray-700">
+                            Showing <span class="font-medium">1</span> to <span class="font-medium">4</span> of <span class="font-medium">24</span> tenants
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 border rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                Previous
+                            </button>
+                            <button class="px-3 py-1 border rounded-md text-sm font-medium bg-indigo-600 text-white">
+                                1
+                            </button>
+                            <button class="px-3 py-1 border rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                2
+                            </button>
+                            <button class="px-3 py-1 border rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                3
+                            </button>
+                            <button class="px-3 py-1 border rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                4
+                            </button>
+                            <button class="px-3 py-1 border rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                5
+                            </button>
+                            <button class="px-3 py-1 border rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
