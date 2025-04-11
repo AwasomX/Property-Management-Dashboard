@@ -1,0 +1,126 @@
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  /* Notification styles */
+  .notification {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 350px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 1100;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .notification-info {
+    background-color: #e0f2fe;
+    color: #0369a1;
+  }
+  
+  .notification-success {
+    background-color: #dcfce7;
+    color: #166534;
+  }
+  
+  .notification-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+  
+  .notification-close {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Loading states */
+  .loading {
+    position: relative;
+    pointer-events: none;
+  }
+  
+  .loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes spin {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  /* Interactive elements */
+  .btn {
+    transition: all 0.2s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Property card hover effect */
+  .property-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .property-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form input focus states */
+  .input:focus {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  }
