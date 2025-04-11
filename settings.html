@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropertyPro - Settings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        indigo: {
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar Navigation -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-indigo-700 text-white">
+                <div class="flex items-center h-16 px-4 border-b border-indigo-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-building mr-2 text-xl"></i>
+                        <span class="text-xl font-bold">PropertyPro</span>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-grow px-4 py-4 overflow-y-auto">
+                    <nav class="flex-1 space-y-2">
+                        <a href="dashboard.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="properties.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-home mr-3"></i>
+                            Properties
+                        </a>
+                        <a href="tenants.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-users mr-3"></i>
+                            Tenants
+                        </a>
+                        <a href="rent-payments.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-dollar-sign mr-3"></i>
+                            Rent Payments
+                        </a>
+                        <a href="maintenance.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-tools mr-3"></i>
+                            Maintenance
+                        </a>
+                        <a href="reports.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                        <a href="messages.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-envelope mr-3"></i>
+                            Messages
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-indigo-200 hover:bg-indigo-600 hover:text-white">
+                            <i class="fas fa-envelope mr-3"></i>
+                            Documents
+                        </a>
+                    </nav>
+                    <div class="mt-auto pb-4">
+                        <a href="settings.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-indigo-800">
+                            <i class="fas fa-cog mr-3"></i>
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Header -->
+            <header class="flex items-center justify-between h-16 px-6 bg-white border-b border-gray-200">
+                <div class="flex items-center">
+                    <button class="md:hidden text-gray-500 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="ml-4 text-xl font-semibold text-gray-800">Settings</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-gray-500 rounded-full hover:bg-gray-100">
+                        <i class="fas fa-bell"></i>
+                        <span class="sr-only">Notifications</span>
+                    </button>
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 focus:outline-none">
+                            <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white">
+                                JD
+                            </div>
+                            <span class="hidden md:inline-block font-medium">John Doe</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="flex-1 overflow-y-auto p-6 bg-gray-100">
+                <div class="max-w-5xl mx-auto">
+                    <!-- Settings Navigation -->
+                    <div class="mb-6">
+                        <nav class="flex space-x-4" aria-label="Tabs">
+                            <a href="#" class="px-3 py-2 font-medium text-sm rounded-md bg-indigo-100 text-indigo-700">
+                                Account
+                            </a>
+                            <a href="#" class="px-3 py-2 font-medium text-sm rounded-md text-gray-500 hover:text-gray-700">
+                                Notifications
+                            </a>
+                            <a href="#" class="px-3 py-2 font-medium text-sm rounded-md text-gray-500 hover:text-gray-700">
+                                Payment Methods
+                            </a>
+                            <a href="#" class="px-3 py-2 font-medium text-sm rounded-md text-gray-500 hover:text-gray-700">
+                                Security
+                            </a>
+                            <a href="#" class="px-3 py-2 font-medium text-sm rounded-md text-gray-500 hover:text-gray-700">
+                                Preferences
+                            </a>
+                        </nav>
+                    </div>
+
+                    <!-- Account Settings Card -->
+                    <div class="bg-white shadow overflow-hidden rounded-lg mb-6">
+                        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                Account Information
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">
+                                Update your basic account details and contact information.
+                            </p>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
+                                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="John">
+                                </div>
+
+                                <div>
+                                    <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
+                                    <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="Doe">
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                                    <input type="email" name="email" id="email" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="john.doe@example.com">
+                                </div>
+
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone number</label>
+                                    <input type="tel" name="phone" id="phone" autocomplete="tel" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="(555) 123-4567">
+                                </div>
+
+                                <div class="md:col-span-2">
+                                    <label for="company" class="block text-sm font-medium text-gray-700">Company name</label>
+                                    <input type="text" name="company" id="company" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="Doe Properties LLC">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-4 py-4 bg-gray-50 text-right sm:px-6">
+                            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Save Changes
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Photo Card -->
+                    <div class="bg-white shadow overflow-hidden rounded-lg mb-6">
+                        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                Profile Photo
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">
+                                Update your profile image.
+                            </p>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 h-16 w-16 rounded-full bg-indigo-500 flex items-center justify-center text-white text-xl font-bold">
+                                    JD
+                                </div>
+                                <div class="ml-4">
+                                    <div class="flex text-sm text-gray-600">
+                                        <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                            <span>Upload a new photo</span>
+                                            <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                        </label>
+                                        <p class="pl-1">or drag and drop</p>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">
+                                        PNG, JPG, GIF up to 2MB
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Password Update Card -->
+                    <div class="bg-white shadow overflow-hidden rounded-lg mb-6">
+                        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                Change Password
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">
+                                Update your account password.
+                            </p>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <div class="grid grid-cols-1 gap-6">
+                                <div>
+                                    <label for="current-password" class="block text-sm font-medium text-gray-700">Current password</label>
+                                    <input type="password" name="current-password" id="current-password" autocomplete="current-password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                </div>
+
+                                <div>
+                                    <label for="new-password" class="block text-sm font-medium text-gray-700">New password</label>
+                                    <input type="password" name="new-password" id="new-password" autocomplete="new-password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                </div>
+
+                                <div>
+                                    <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm new password</label>
+                                    <input type="password" name="confirm-password" id="confirm-password" autocomplete="new-password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-4 py-4 bg-gray-50 text-right sm:px-6">
+                            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Update Password
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Account Actions Card -->
+                    <div class="bg-white shadow overflow-hidden rounded-lg">
+                        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                Account Actions
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">
+                                Manage your account status and data.
+                            </p>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                                        <i class="fas fa-file-export"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <h4 class="text-sm font-medium text-gray-900">Export account data</h4>
+                                        <p class="text-sm text-gray-500">Download a copy of your account data for backup or transfer.</p>
+                                        <button class="mt-2 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            Export Data
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="border-t border-gray-200 pt-4 flex items-start">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <h4 class="text-sm font-medium text-gray-900">Delete account</h4>
+                                        <p class="text-sm text-gray-500">Permanently delete your account and all associated data.</p>
+                                        <button class="mt-2 inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                            Delete Account
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
